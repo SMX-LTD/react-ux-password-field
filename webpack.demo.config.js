@@ -17,7 +17,8 @@ module.exports = {
     filename: 'demo.bundle.js'
   },
   externals: {
-    'react': 'React'
+    'react': 'React',
+    'react-dom': 'ReactDOM'
   },
   module: {
     loaders: [

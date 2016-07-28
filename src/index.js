@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react'),
+    ReactDOM = require('react-dom'),
     RP    = React.PropTypes,
     config = require('./js/config'),
     debounce = require('lodash.debounce');
@@ -248,7 +249,7 @@ var InputPassword = React.createClass({
     if (typeof navigator !== 'undefined') {
       setTimeout(function() {
         if (!/Firefox/.test(navigator.userAgent)) return;
-        var elem = that.refs[that.props.id].getDOMNode();
+        var elem = ReactDOM.findDOMNode(that.refs[that.props.id])
         elem.selectionStart = that.state.selectionStart;
         elem.selectionEnd = that.state.selectionEnd;
       }, 1);
